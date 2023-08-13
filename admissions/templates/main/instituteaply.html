@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %} {% block content %}
+{% load crispy_forms_tags %}
+
+<section class="section-hero overlay inner-page bg-image" style="background-color: #007BFF;"
+  id="home-section">
+  <div class="container">
+    
+  </div>
+</section>
+<section>
+    <form method="post" action="{% url 'admissions:applyinstitutes' %}" style="margin-top: 5em; align-items: center; text-align: center; margin-bottom: 5em;">
+    {{comment_form|crispy }} 
+    {% csrf_token %}
+    
+    <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+</form>
+</section>
+
+
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-hero overlay inner-page bg-image" style="background-color: #007BFF;"
+  id="home-section">
+  <div class="container">
+    
+  </div>
+</section>
+
+
+
+
+
+<h1  style="align-items: center; text-align: center;">Student Purchase plan</h1>
+<form name="form_main" style="align-items: center; text-align: center; padding: 50px;">
+  <label for="name" class="text-dark">name </label>
+  <input type="text" name="name" id="name"> <br>
+  <label for="number" class="text-dark">number </label>
+  <input type="text" name="number" id="number"> <br>
+  <label for="email" class="text-dark">email </label>
+  <input type="text" name="email" id="email"> <br>
+  
+  
+  <button type="button" onclick=" generateLinkstudent()" class="btn btn-lg">Purchase</button>
+</form>
+
+
+{% endblock %}

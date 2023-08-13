@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<section class="section-hero overlay inner-page bg-image" style="background-color: #007BFF;"
+  id="home-section">
+  <div class="container">
+    
+  </div>
+</section>
+
+<section class="instsections">
+
+
+
+  <div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-md-8 mt-3 ">
+          {% for  instituteslisting in page_obj %}
+            <div class="card mb-4">
+                <div class="card-body text-justify ">
+                    
+                 
+                   
+                  <a href="{% url 'admissions:institute_details' instituteslisting.slug  %}" style="text-decoration: none;">
+                   
+         
+                      <h4 style="align-items: center; text-align: center;">{{ instituteslisting.title }}</h4>
+                      <p  style="align-items: center; text-align: center;">
+                          {{instituteslisting.content|safe|slice:":10" }}
+                      </p>
+                      <a href="{% url 'admissions:institute_details' instituteslisting.slug  %}" class="btn btn-primary-outline" style="background-color: #0f3a27; color: antiquewhite; align-items: center; text-align: center;"> Read More &rarr;</a>
+                     
+             
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</div>
+
+
+  
+  
+</section>
+
+  
+  {% endblock content %}

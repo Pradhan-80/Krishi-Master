@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}
+
+
+
+    <!-- HOME -->
+    <section class="section-hero overlay inner-page bg-image" style="background-color: #007BFF;"
+    id="home-section">
+    <div class="container">
+      
+    </div>
+  </section>
+
+    <section class="site-section itemblock2" id="next-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 mr-auto">
+            <div class="border p-4 rounded">
+              <ul class="list-unstyled detailblockmb-0">
+                <li><span class="active">Graphic Design</span></li>
+                <li><a href="#">Topic 1</a></li>
+                <li><a href="#">Topic 2</a></li>
+          
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8" style="background-color: #007BFF;">
+            
+            <h2 class="text-black">{{ applicant.get_full_name }}</h2>
+            <p><h3>Email :</h3 class="text-black">{{ applicant.email }}</p>
+            <p class="text-black"><h3>Gender :</h3>
+                {% if applicant.gender == 'M' %}
+                    Male
+                {% else %}
+                    Female
+                {% endif %}
+            </p>
+            <p><a href="mailto:{{ applicant.resume }}" class="btn btn-primary btn-md mt-4">Resume</a></p>
+            <p><a href="mailto:{{ applicant.email }}" class="btn btn-primary btn-md mt-4">Contact</a></p>
+            <p><h3>Phone No. :</h3>{{ applicant.phone }}</p>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+{% endblock %}

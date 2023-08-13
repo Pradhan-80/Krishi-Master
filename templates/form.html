@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="section-hero overlay inner-page bg-image" style="background-color: #007BFF;"
+  id="home-section">
+  <div class="container">
+    
+  </div>
+</section>
+
+
+
+
+
+<h1  style="align-items: center; text-align: center;">HR Purchase plan</h1>
+<form name="form_main" style="align-items: center; text-align: center; padding: 50px;">
+  <label for="name" class="text-dark">name </label>
+  <input type="text" name="name" id="name"> <br>
+  <label for="number" class="text-dark">number </label>
+  <input type="text" name="number" id="number"> <br>
+  <label for="email" class="text-dark">Email </label>
+  <input type="text" name="Email" id="email"> <br>
+  <label for="plans" class="text-dark">Choose a plan:</label>
+
+<select name="plans" id="plans">
+  <option value="basichr">Basic HR </option>
+  <option value="premiumhr">Premium HR</option>
+  <option value="advancehr">Advance HR</option>
+  
+</select>
+  <p id="end_url"></p>
+  <button type="button" onclick=" generateLink()" class="btn btn-lg">Purchase</button>
+</form>
+
+
+{% endblock %}

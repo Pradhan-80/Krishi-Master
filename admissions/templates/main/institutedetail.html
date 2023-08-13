@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+{% load crispy_forms_tags %}
+<section class="section-hero overlay inner-page bg-image" style="background-color: #007BFF;"
+  id="home-section">
+  <div class="container">
+    
+  </div>
+</section>
+
+   
+    <div class="container-cont">
+        <div class="row">
+           
+            <div class="col-md-8 card mb-4  mt-3   top" id="main"   >
+               
+               
+                <div class="card-body cartoon " id="cartoon"   >  
+                    <h1>{% block title %} {{ instituteslisting.title }} {% endblock title %}</h1>
+                     <!-- featured image --> 
+                    
+                     <p class=" text-muted "> {{  instituteslisting.created_on }}</p>
+                     <p class="text-black text-justify">{{  instituteslisting.content }}</p>
+                 
+                </div>
+                <a class="applynow btn-primary  p-3 rounded text-decoration-none" href="{% url 'admissions:applyinstitutes' %}" >Apply Now</a>
+            </div>
+          
+           
+            
+           
+        </div>
+    </div>
+    
+  
+
+  
+
+{% endblock content %}

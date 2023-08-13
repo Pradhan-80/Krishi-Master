@@ -1,0 +1,49 @@
+{%  extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="section-hero overlay inner-page bg-image" style="background-color: #007BFF;"
+  id="home-section">
+  <div class="container">
+    
+  </div>
+</section>
+<section class="questionsection  ">
+        <div class="question text-monospace justify-content-center">
+        {% if object %}
+            <h1 class="text-dark text-center">{{object.question}}</h1>
+            <p class="text-dark text-center"> <small class="text-dark text-center">{{object.author}}</small>
+                 <small>{{object.updated.date}}</small>
+                     <small>{{object.get_genre_display}}</small>
+            </p>
+        </div>
+        {% endif %}
+        <div class="p-2 px-3">
+        <a href="{% url 'discussions:answer' object.slug %}" class="btn btn-outline-success p-2 m-2 ">Add Answer</a>
+        {% if object.author == request.user %}<a href="{% url 'discussions:delete_question' object.slug %}" class="btn btn-outline-danger p-2 m-2 ">Delete Question</a>
+        {% endif %}
+        </div>
+        <!-- <div class="" style="min-height:200px;border-top:1px solid black;-webkit-background-origin: ;
+        background-origin: ;rder-left:1px solid black;border-right:1px solid black"> -->
+            {% if answer_list %}
+                {% for ans in answer_list %}
+                    <div class="row shadow p-3 text-monospace pt-2 mb-3" style="padding:10px, solid black; ">
+                        <div class="col-lg-2 col-sm-2 px-4   text-success " >{{ans.author.username|title}}:-</div>
+                        <div class="col-lg-8  col-sm-3"><h3 class="text-black">{{ans.answer|linebreaks}}</h3> </div>
+                        <div class="col-lg-2  col-sm-3">
+                            {% if ans.author == request.user %}
+                            <a href="{% url 'discussions:delete_answer' object.slug ans.author.id %}" class="btn-link btn-outline-danger btn text-danger text-decoration-none">Delete</a>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="lead">Comments and answers will be shown here !!!</p>
+
+            {% endif %}
+        <!-- </div> -->
+</section>
+
+
+{% endblock %}

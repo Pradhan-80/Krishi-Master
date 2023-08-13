@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section class="section-hero overlay inner-page bg-image" style="background-color: #007BFF;"
+  id="home-section">
+  <div class="container">
+    
+  </div>
+</section>
+    <form method="POST"  style="font-size: 20px;">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input type="submit" class="btn-sm btn-outline-primary">
+    </form>
+<section style="margin-bottom: 20px;"></section>
+{% endblock %}
